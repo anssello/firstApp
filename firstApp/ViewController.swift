@@ -17,24 +17,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var res = 0
     @IBAction func sumSign(_ sender: Any) {
-        res = Int(textField1.text!)! + Int(textField2.text!)!
-        resultLabel.text = String(res)
+        let a = Int(textField1.text!) ?? 0
+        let b = Int(textField2.text!) ?? 0
+        resultLabel.text = String("result = \(a + b)")
 
     }
     
     @IBAction func subtractionSign(_ sender: Any) {
-        res = Int(textField1.text!)! - Int(textField2.text!)!
-        resultLabel.text = String(res)
+        let a = Int(textField1.text!) ?? 0
+        let b = Int(textField2.text!) ?? 0
+        resultLabel.text = String("result = \(a - b)")
     }
-    
+//    
     @IBAction func multiplySign(_ sender: Any) {
-        res = Int(textField1.text!)! * Int(textField2.text!)!
-        resultLabel.text = String(res)
+        let a = Int(textField1.text!) ?? 0
+        let b = Int(textField2.text!) ?? 0
+        resultLabel.text = String("result = \(a * b)")
     }
     @IBAction func divisionSign(_ sender: Any) {
-        let res = Double(textField1.text!)! / Double(textField2.text!)!
-        resultLabel.text = String(res)
+        let a = Double(textField1.text!) ?? 0
+        let b = Double(textField2.text!) ?? 0
+        if b != 0{
+            resultLabel.text = String("result = \(a / b)")
+        } else {
+            resultLabel.text = "error"
+        }
     }
 }
